@@ -1,0 +1,587 @@
+body {
+    
+    background-repeat: no-repeat;
+}
+
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+
+        /* Contenedor del Preloader */
+        .preloader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #161b22 0%, #0d1117 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .preloader-container.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Estructura del Icono Animado */
+        .loader-icon-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        /* Círculo brillante de fondo */
+        .glow-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px dashed rgba(56, 189, 248, 0.3);
+            animation: rotateGlow 10s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Contenedor SVG */
+        .loader-svg {
+            width: 80px;
+            height: 80px;
+            filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.7));
+            animation: pulseIcon 2s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Elementos SVG ocultos/visibles según selección */
+        .svg-shape {
+            display: none;
+        }
+        .svg-shape.active {
+            display: block;
+        }
+
+        /* Animación interna de los trazos */
+        .draw-path {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: dashDraw 2.5s ease forwards infinite alternate;
+        }
+
+        @keyframes dashDraw {
+            0% {
+                stroke-dashoffset: 300;
+                fill: rgba(56, 189, 248, 0.1);
+            }
+            100% {
+                stroke-dashoffset: 0;
+                fill: rgba(56, 189, 248, 0.6);
+            }
+        }
+
+        /* Texto de Porcentaje */
+        .loader-percentage {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        /* Barra de Carga */
+        .loader-progress-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loader-progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #0ea5e9, #38bdf8, #7dd3fc);
+            box-shadow: 0 0 8px #38bdf8;
+            transition: width 0.1s linear;
+        }
+
+        /* Controles de Personalización (Para alternar y probar) */
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            display: flex;
+            gap: 12px;
+            background: rgba(22, 27, 34, 0.8);
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            backdrop-filter: blur(5px);
+            z-index: 10;
+        }
+
+        .control-btn {
+            background: transparent;
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover, .control-btn.active {
+            background: #38bdf8;
+            color: #0d1117;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+        }
+
+        /* Contenido Principal al terminar de cargar */
+        .main-content {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+
+        .main-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .main-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #f0f6fc;
+        }
+
+        .main-content p {
+            color: #8b949e;
+            font-size: 1.1rem;
+        }
+
+
+.click {
+    padding: 2px 10px;
+    margin-top: -150%;
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+   background-image: url(./imagenes/45e46f49fb55a01ba4e4685d985abf48.gif);
+   background-size: 120%;
+    box-shadow: 1px 1px 30px -5px#a6a6a6; 
+    cursor: pointer;
+    margin-left: 81%;
+    border-radius: 50%;
+    background-color: #4a4a4a;
+  }
+  
+  .melodia{
+    color: #ffffff;
+  }
+
+
+  
+  .portada{
+    width: 100%;
+    margin-top: -5%;
+  }
+    
+  .audio{
+    width: 35%;
+    height: 20px;
+    margin-left: -70%;
+    background-color:  #ffffff;
+    color: #3d3d3d;
+    margin-top: -48%;
+    
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+.calendario{
+  width: 80%;
+ margin-left: 10%;
+    margin-top: 5%;
+}
+      .cuenta-regresiva {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 1em;
+        padding: 0.3em;
+        margin-top: -55%;
+    }
+    
+  .portada{
+    width: 100%;
+  }
+    
+    .cr-time > span {
+        font-size: 27px;
+        font-weight: bold;
+        color: #8e8e8d;
+        font-family: 'Julius Sans One', sans-serif;
+        
+        
+    }
+    .cr-desc {
+        color: #737373;
+        font-weight: 500;
+        font-family: 'Julius Sans One', sans-serif;
+        font-size: 15px;
+        
+    }
+    .cr-block {
+        border-radius: 5px;
+        padding: 0.1em 0.2em;
+      
+    }
+    .Play{
+    
+      font-family: 'Julius Sans One', sans-serif;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 10%;
+      color: #515051;
+     
+     }
+      h5{
+      font-size: 15px;
+      text-align: center;
+      margin-top: -5%;
+      
+      
+      }
+    
+    
+    .segundo{
+  width: 17%;
+  margin-top: -25%;
+  margin-left: 68%;
+    }
+  
+    
+  
+    .amor {
+      width: 10%;
+      margin-left: 45%;
+      margin-top: 75%;
+    }
+      
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #e9e9e9;
+        z-index: 9999;
+      
+      }
+      
+      .preloader::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0 -20px;
+        border: 4px solid #76bac204; /* Color del círculo */
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 5s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      
+      }
+      
+      .loaded {
+        overflow: auto;
+      }
+      
+      .loaded .preloader {
+        transition-property: opacity, left;
+        transition-duration: 0.95s, 0s;
+        transition-delay: 0s, 0.95s;
+        opacity: 0;
+        left: 100%;
+      }
+  
+
+
+    .parrafo1{
+      text-align: center;
+      font-family: 'Julius Sans One', sans-serif;
+           font-size: 20px;
+           color: #626262;
+           font-weight: 600;
+           margin-top: 20%;
+    }
+  .seccion-fiesta{
+    margin-top: -5%;
+  }
+  .seccion-regalo{
+    margin-top: -4%;
+  }
+  
+  .frase{
+    text-align: center;
+    font-size: 30px;
+    color: #636363;
+    margin-top: 30%; 
+    font-weight: 550;
+    font-family: 'Dancing Script', cursive; 
+  }
+  .fiesta{
+    text-align: center;
+    font-size: 45px;
+    color: #6b8bc2;
+    margin-top: 2%; 
+    font-weight: 550;
+    margin: 13%;
+    font-family: 'Dancing Script', cursive; 
+  }
+  .obsequio{
+    text-align: center;
+    font-size: 40px;
+    color: #be9292;
+    margin-top: 2%; 
+    font-weight: 550;
+    margin: 13%;
+    font-family: 'Dancing Script', cursive; 
+  }
+  
+  .copas{
+    width: 25%;
+    margin-left: 38%;
+    margin-top: -15%;
+    
+  }
+  .final{
+    width: 54%;
+     display: block;
+  margin: 0 auto;
+    margin-top: -15%;
+    
+  }
+  .regalo{
+    width: 22%;
+    margin-left: 38%;
+    margin-top: -10%;
+    
+  }
+  
+  
+  .parrafodos{
+    text-align: center;
+    font-size: 25px;
+    color: #4c4c4c;
+    margin-top: 5%; 
+    font-family: "Arsenal SC", sans-serif;
+    font-weight: 400;
+         
+  }
+  
+      .menu{
+    text-align: center;
+    font-size: 20px;
+    color: #584622;
+    margin-top: 5%; 
+    font-family: "Arsenal SC", sans-serif;
+    font-weight: 500;
+         
+  }
+   
+
+    .ubicacion {
+      padding: 2px 10px;
+      font-family: "Arsenal SC", sans-serif;
+      margin-top: -20%;
+      font-size: 25px;
+      font-weight: 400;
+      border: none;
+      border-radius: 20px;
+      color: #ffffff;
+     background-image: url(./IMAGENES/confeti.gif);
+     background-size: 150%;
+      box-shadow: 1px 1px 30px -5px#d2c598; 
+      cursor: pointer;
+      background-color: #345d7e;
+      text-decoration: none;
+    }
+    .boton{
+text-align: center;
+margin-top: 10%;
+    }
+
+
+    .form{
+      width: 14%;
+      margin-left: 45%;
+      margin-top: -17%;
+      
+    }
+
+
+.dorado{
+  width: 100%;
+  margin-top: -15%;
+}
+
+.chat{
+width: 20%;
+margin-left: 10% ;
+
+}
+.aita{
+  width: 28%;
+margin-left: 5% ;
+}
+.a2{
+  text-decoration: none;
+}
+.mauri{
+  width: 28%;
+margin-left: 5% ;
+}
+.hojas{
+  width: 50%;
+margin-left:-15% ;
+}
+
+.corazon{
+  width: 15%;
+
+display: block;
+  margin: 0 auto;
+}
+
+.parrafoDe{
+  text-align: center;
+  font-size: 22px;
+  color: #4b4b4b;
+  margin-top: 12%; 
+  margin: 5%;
+  font-family: "Arsenal SC", sans-serif;
+  font-weight: 500;
+  background-image: url(./imagenes/5af1f7230024abf57e8020427471018e.gif);
+  background-size:30%;
+
+}
+.parrafo3{
+  text-align: center;
+    font-size: 25px;
+    color: #4c4c4c;
+    margin-top: 5%; 
+    font-family: "Arsenal SC", sans-serif;
+    font-weight: 400;
+       
+}
+
+
+.carousel-inner img{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10%;
+}
+
+
+
+
+.esperamos{
+  text-align: center;
+    font-size: 25px;
+    color: #4c4c4c;
+    margin-top: 15%; 
+    font-family: "Arsenal SC", sans-serif;
+    font-weight: 400;
+ 
+}
+
+.click2{
+ padding: 2px 10px;
+      font-family: "Arsenal SC", sans-serif;
+      margin-top: 5%;
+      font-size: 25px;
+      font-weight: 400;
+      border: none;
+      border-radius: 20px;
+      color: #fcfcfc;
+     background-image: url(./IMAGENES/confeti.gif);
+     background-size: 150%;
+      box-shadow: 1px 1px 30px -5px#d2c598; 
+      cursor: pointer;
+      background-color: #b88d2c;
+      text-decoration: none;
+      margin-left: 37%;
+}
+.tecla {
+  margin-top: -50%;
+   margin-left: 50%;
+  }
+  
+  
+  .box__copyright {
+    max-width: 1200px;
+    padding: 18px 7px;
+    text-align: center;
+    margin-top: 30%;
+    background-color: #ffffff;
+    font-size: 100%;
+  }
+  
+  .box__copyright p {
+    margin-top: -10px;
+    color: #c3b1b1;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .box__copyright a {
+    text-decoration: none;
+    color: #91a891;
+  }
