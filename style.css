@@ -388,13 +388,16 @@ body {
   .obsequio{
     text-align: center;
     font-size: 40px;
-    color: #be9292;
+    color: #6b8bc2;
     margin-top: 2%; 
     font-weight: 550;
     margin: 13%;
     font-family: 'Dancing Script', cursive; 
   }
-  
+  .flor{
+    width: 30%;
+  margin-right: -80%;
+  }
   .copas{
     width: 25%;
     margin-left: 38%;
