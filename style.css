@@ -367,6 +367,9 @@ body {
   .seccion-regalo{
     margin-top: -4%;
   }
+  .seccion-dres{
+    margin-top: -58%;
+  }
   
   .frase{
     text-align: center;
@@ -380,14 +383,14 @@ body {
     text-align: center;
     font-size: 45px;
     color: #6b8bc2;
-    margin-top: 2%; 
+    margin-top: 50%;
     font-weight: 550;
     margin: 13%;
     font-family: 'Dancing Script', cursive; 
   }
   .obsequio{
     text-align: center;
-    font-size: 40px;
+    font-size: 48px;
     color: #6b8bc2;
     margin-top: 2%; 
     font-weight: 550;
@@ -492,8 +495,8 @@ margin-left: 5% ;
 margin-left: 5% ;
 }
 .hojas{
-  width: 50%;
-margin-left:-15% ;
+  width: 40%;
+margin-left:-10% ;
 }
 
 .corazon{
