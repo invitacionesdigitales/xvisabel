@@ -352,7 +352,12 @@ body {
       }
   
 
-
+.linea{
+ width: 70%;
+ display: block;
+  margin: 0 auto;
+  margin-top: 15%;
+}
     .parrafo1{
       text-align: center;
       font-family: 'Julius Sans One', sans-serif;
@@ -388,6 +393,16 @@ body {
     margin: 13%;
     font-family: 'Dancing Script', cursive; 
   }
+ .fiestados{
+    text-align: center;
+    font-size: 45px;
+    color: #555454;
+    margin-top: 50%;
+    font-weight: 550;
+    margin: 13%;
+    font-family: 'Dancing Script', cursive; 
+  }
+
   .obsequio{
     text-align: center;
     font-size: 48px;
@@ -408,10 +423,10 @@ body {
     
   }
   .final{
-    width: 54%;
+    width: 100%;
      display: block;
   margin: 0 auto;
-    margin-top: -15%;
+    margin-top: 15%;
     
   }
   .regalo{
@@ -464,6 +479,10 @@ text-align: center;
 margin-top: 10%;
     }
 
+  .boton2{
+text-align: center;
+margin-top: 10%;
+    }
 
     .form{
       width: 14%;
@@ -500,8 +519,7 @@ margin-left:-10% ;
 }
 
 .corazon{
-  width: 15%;
-
+  width: 8%;
 display: block;
   margin: 0 auto;
 }
@@ -512,7 +530,7 @@ display: block;
   color: #4b4b4b;
   margin-top: 12%; 
   margin: 5%;
-  font-family: "Arsenal SC", sans-serif;
+ font-family: 'Times New Roman', Times, serif;
   font-weight: 500;
   background-image: url(./imagenes/5af1f7230024abf57e8020427471018e.gif);
   background-size:30%;

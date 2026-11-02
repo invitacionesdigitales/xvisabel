@@ -64,6 +64,7 @@ function diaEventoAhora () {
 
 
 
+
   boton.addEventListener("click", () => {
 
     Swal.fire({
@@ -77,4 +78,5 @@ function diaEventoAhora () {
     })
   });
 
+  
   
